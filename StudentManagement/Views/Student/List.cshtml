@@ -1,0 +1,36 @@
+﻿@model IEnumerable<StudentManagement.Models.Student>
+
+@{
+    ViewData["Title"] = "Students List";
+}
+
+<h2>Students List</h2>
+
+<form method="get" asp-action="List">
+    <div class="form-group">
+        <input type="text" name="searchString" class="form-control" placeholder="Search by name..." />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Class</th>
+            <th>Roll Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.Age</td>
+                <td>@student.Class</td>
+                <td>@student.RollNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<StudentManagement.Models.StudentSubject>
+
+@{
+    ViewData["Title"] = "Student's Subjects and Teachers";
+}
+
+<h2>Student's Subjects and Teachers</h2>
+
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>Subject</th>
+            <th>Class</th>
+            <th>Teacher</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var studentSubject in Model)
+        {
+            <tr>
+                <td>@studentSubject.Subject.Name</td>
+                <td>@studentSubject.Subject.Class</td>
+                <td>@studentSubject.Subject.Teacher.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
